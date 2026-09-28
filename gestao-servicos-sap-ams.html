@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gestão de Serviços SAP & AMS | Alessandra de S. Ferreira</title>
+<meta name="description" content="Modelos de Service Delivery, AMS, ITIL, SLA, incidentes críticos, RCA, mudanças e governança para ambientes SAP (ECC, S/4HANA).">
+<style>
+:root{--tim:#1f5fbf;--dia:#c62828;--ser:#d81b73;--ink:#1c2430;--mut:#5b6675;--bg:#f6f8fb;--card:#fff;--ln:#e2e7ee}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+header{background:#1f3a5f;color:#fff;padding:32px 20px;text-align:center}
+header h1{margin:0 0 6px;font-size:1.6rem}header p{margin:4px auto;max-width:760px;font-size:.95rem;opacity:.92}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:14px;background:#fff;border-bottom:1px solid var(--ln);position:sticky;top:0}
+nav a{font-size:.8rem;text-decoration:none;color:#1f3a5f;border:1px solid var(--ln);padding:4px 10px;border-radius:14px}
+main{max-width:980px;margin:0 auto;padding:16px}
+section{background:var(--card);border:1px solid var(--ln);border-left:6px solid var(--c);border-radius:8px;padding:18px;margin:18px 0}
+section h2{margin:0 0 2px;color:var(--c);font-size:1.15rem}.tag{font-size:.75rem;color:var(--mut);margin-bottom:10px}
+.w{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.85rem}
+th{background:var(--c);color:#fff;text-align:left;padding:7px}td{padding:7px;border-bottom:1px solid var(--ln);vertical-align:top}
+.ok{color:#1b7f3b;font-weight:bold}.no{color:#c62828;font-weight:bold}.wr{color:#b26a00;font-weight:bold}
+ol,ul{margin:6px 0;padding-left:22px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.st{flex:1 1 150px;border:1px solid var(--c);border-radius:8px;padding:8px;font-size:.82rem}.st b{color:var(--c)}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:20px}
+@media(prefers-color-scheme:dark){:root{--ink:#e8edf3;--mut:#9aa6b6;--bg:#12171e;--card:#1a212b;--ln:#2b3644}nav{background:#1a212b}nav a{color:#cfe0ff}}
+</style></head><body>
+<header><h1>Gestão de Serviços SAP &amp; AMS</h1>
+<p>Modelos de trabalho para sustentação de ambientes SAP (ECC, S/4HANA, TDF, Concur): SLAs e KPIs, incidentes críticos, problemas (RCA), mudanças, contratos de suporte e governança.</p>
+<p><small>Alessandra de S. Ferreira | Service Delivery, AMS e Governança de TI | Dados ilustrativos, sem informações de clientes ou empregadores.</small></p></header>
+<nav><a href="#sla">SLA e KPIs</a><a href="#itil">Fluxo ITIL</a><a href="#p1">Incidente crítico</a><a href="#rca">RCA</a><a href="#rfc">Mudanças e cutover</a><a href="#ams">Contrato AMS</a><a href="#gov">Comitê de governança</a><a href="#csi">Melhoria contínua</a></nav>
+<main>
+
+<section id="sla" style="--c:var(--tim)"><h2>1. Painel de SLAs e KPIs de sustentação SAP</h2><div class="tag">Referência: modelo aplicado em Service Delivery (azul TIM) | dados ilustrativos</div>
+<div class="w"><table><tr><th>Indicador</th><th>Meta</th><th>Realizado</th><th>Status</th></tr>
+<tr><td>SLA de resolução P1 (crítico)</td><td>≥ 95% em 4h</td><td>97%</td><td class="ok">Atingido</td></tr>
+<tr><td>SLA de resolução P2 (alto)</td><td>≥ 95% em 8h</td><td>93%</td><td class="wr">Atenção</td></tr>
+<tr><td>MTTR médio P1/P2</td><td>≤ 3h30</td><td>3h05</td><td class="ok">Atingido</td></tr>
+<tr><td>Disponibilidade dos sistemas SAP</td><td>≥ 99,7%</td><td>99,82%</td><td class="ok">Atingido</td></tr>
+<tr><td>Incidentes recorrentes (reincidência)</td><td>≤ 5%</td><td>7%</td><td class="no">Fora da meta</td></tr>
+<tr><td>Aging de backlog &gt; 30 dias</td><td>≤ 10%</td><td>12%</td><td class="wr">Atenção</td></tr>
+<tr><td>Mudanças com falha ou rollback</td><td>≤ 3%</td><td>2%</td><td class="ok">Atingido</td></tr>
+<tr><td>Satisfação do negócio (CSAT)</td><td>≥ 4,2/5</td><td>4,4</td><td class="ok">Atingido</td></tr></table></div>
+<p><b>OKR:</b> garantir estabilidade dos sistemas críticos, reduzir o backlog crítico e aumentar a previsibilidade das entregas. <b>KRs:</b> reduzir P1/P2 em 30%, elevar o SLA a 95% e reduzir a reincidência para 5%.</p></section>
+
+<section id="itil" style="--c:var(--ser)"><h2>2. Fluxo ITIL integrado: Incident, Problem, Change e Service Level</h2><div class="tag">Como os processos se conectam na sustentação | modelo genérico (rosa Serasa)</div>
+<div class="flow"><div class="st"><b>Incident</b><br>Registro, classificação (P1 a P4), diagnóstico, restauração do serviço.</div>
+<div class="st"><b>Problem</b><br>Incidente crítico ou recorrente gera problema; RCA; erro conhecido e solução definitiva.</div>
+<div class="st"><b>Change</b><br>Solução definitiva entra como mudança (RFC), com avaliação de risco e aprovação.</div>
+<div class="st"><b>Service Level</b><br>Medição de SLA e KPIs, relatório mensal e revisão no comitê.</div></div>
+<p>O ciclo fecha na melhoria contínua: o resultado do comitê gera novas ações no backlog.</p></section>
+
+<section id="p1" style="--c:var(--dia)"><h2>3. Playbook de incidente crítico (P1)</h2><div class="tag">Modelo aplicado em Service Delivery (vermelho Dia) | ilustrativo</div>
+<ol><li><b>Detectar e classificar (0 a 15 min):</b> confirmar impacto no negócio (faturamento, fiscal, logística), classificar P1 e abrir a sala de crise.</li>
+<li><b>Designar papéis:</b> gestor do incidente, responsável técnico (funcional, Basis, integração) e responsável por comunicação.</li>
+<li><b>Conter e restaurar:</b> aplicar solução de contorno, priorizando o retorno do serviço sobre a causa raiz.</li>
+<li><b>Comunicar:</b> atualizações ao negócio a cada 30 min, com impacto, ação em curso e próxima previsão.</li>
+<li><b>Encerrar:</b> validar com o usuário-chave, registrar linha do tempo e abrir o problema para RCA.</li>
+<li><b>Pós-incidente (até 48h):</b> relatório com causa, ações corretivas e preventivas, responsáveis e prazos.</li></ol>
+<p><b>Escalonamento:</b> N1 (service desk), N2 (sustentação SAP), N3 (especialista/fornecedor), gestão de serviços e diretoria, conforme o tempo sem resolução.</p></section>
+
+<section id="rca" style="--c:var(--dia)"><h2>4. Relatório de Problema e RCA (causa raiz)</h2><div class="tag">Modelo de análise (vermelho Dia) | exemplo ilustrativo</div>
+<div class="w"><table><tr><th>Campo</th><th>Exemplo</th></tr>
+<tr><td>Problema</td><td>Falha recorrente na integração de pedidos entre o SAP e a plataforma de logística</td></tr>
+<tr><td>Impacto</td><td>Atraso na emissão de notas e no faturamento (P1/P2 recorrentes)</td></tr>
+<tr><td>5 Porquês</td><td>1) Fila travou. 2) Mensagem com campo inválido. 3) Cadastro sem validação. 4) Regra de validação inexistente na origem. 5) Ausência de checklist de qualidade no cadastro mestre.</td></tr>
+<tr><td>Causa raiz</td><td>Falta de validação de dados mestres na origem</td></tr>
+<tr><td>Ação corretiva</td><td>Regra de validação e reprocessamento automático</td></tr>
+<tr><td>Ação preventiva</td><td>Checklist de cadastro, monitoramento da fila e alerta proativo</td></tr>
+<tr><td>Erro conhecido</td><td>Documentado na base de conhecimento com solução de contorno</td></tr>
+<tr><td>Indicador de sucesso</td><td>Queda da reincidência para ≤ 5% em 90 dias</td></tr></table></div></section>
+
+<section id="rfc" style="--c:var(--tim)"><h2>5. Gestão de mudanças (RFC) e checklist de cutover SAP</h2><div class="tag">Upgrades, migrações e transformações SAP | modelo (azul TIM) | ilustrativo</div>
+<p><b>Requisição de mudança:</b> descrição, justificativa de negócio, sistemas afetados, risco (baixo/médio/alto), plano de testes, plano de rollback, janela, aprovadores (CAB) e comunicação.</p>
+<div class="w"><table><tr><th>Fase do cutover</th><th>Itens de controle</th><th>Responsável</th></tr>
+<tr><td>D-30 a D-15</td><td>Plano de migração, testes integrados, UAT com o negócio, matriz de riscos</td><td>Gestão do projeto</td></tr>
+<tr><td>D-7</td><td>Congelamento de mudanças, backup, ensaio de cutover, comunicado às áreas</td><td>Basis e sustentação</td></tr>
+<tr><td>D-0</td><td>Carga de dados, validação fiscal e financeira, critérios de go/no-go</td><td>Gestor do cutover</td></tr>
+<tr><td>D+1 a D+15</td><td>Hypercare, monitoramento de incidentes, ajustes, lições aprendidas</td><td>Service Delivery</td></tr></table></div></section>
+
+<section id="ams" style="--c:var(--ser)"><h2>6. Contrato de suporte AMS: matriz de severidade e scorecard</h2><div class="tag">Gestão de contratos e fornecedores | modelo (rosa Serasa) | ilustrativo</div>
+<div class="w"><table><tr><th>Severidade</th><th>Descrição</th><th>Resposta</th><th>Resolução</th><th>Atendimento</th></tr>
+<tr><td>P1 Crítico</td><td>Parada de processo crítico (fiscal, faturamento)</td><td>15 min</td><td>4h</td><td>24x7</td></tr>
+<tr><td>P2 Alto</td><td>Degradação relevante, com contorno</td><td>30 min</td><td>8h</td><td>Horário estendido</td></tr>
+<tr><td>P3 Médio</td><td>Impacto limitado a usuários</td><td>2h</td><td>3 dias úteis</td><td>Comercial</td></tr>
+<tr><td>P4 Baixo</td><td>Dúvida ou melhoria</td><td>1 dia útil</td><td>Backlog</td><td>Comercial</td></tr></table></div>
+<p><b>Scorecard do fornecedor (mensal):</b> aderência a SLA (40%), qualidade das entregas e reincidência (25%), comunicação e governança (15%), aderência a custo e escopo (20%). Abaixo de 85%: plano de ação; abaixo de 70%: escalonamento contratual.</p></section>
+
+<section id="gov" style="--c:var(--ser)"><h2>7. Comitê de governança e status report executivo</h2><div class="tag">Modelo de pauta mensal (rosa Serasa) | ilustrativo</div>
+<ol><li>Resultados de SLAs e KPIs do mês e tendência.</li><li>Incidentes críticos, problemas abertos e RCAs concluídos.</li><li>Mudanças e projetos (upgrades, migrações) com semáforo de prazo, custo e risco.</li><li>Riscos e decisões necessárias da diretoria.</li><li>Desempenho do fornecedor (scorecard).</li><li>Plano de melhoria contínua e próximos passos.</li></ol>
+<p><b>Cadência:</b> operacional semanal (equipe e parceiros), tático quinzenal (gestores) e executivo mensal (diretoria).</p></section>
+
+<section id="csi" style="--c:var(--dia)"><h2>8. Plano de melhoria contínua (CSI) do ambiente SAP</h2><div class="tag">Modelo 5W2H (vermelho Dia) | ilustrativo</div>
+<div class="w"><table><tr><th>O quê</th><th>Por quê</th><th>Quem</th><th>Quando</th><th>Como</th><th>Custo</th></tr>
+<tr><td>Monitorar filas de integração</td><td>Reduzir P1/P2 recorrentes</td><td>Sustentação</td><td>30 dias</td><td>Alertas proativos</td><td>Baixo</td></tr>
+<tr><td>Automatizar reprocessamentos</td><td>Reduzir MTTR</td><td>Time técnico</td><td>60 dias</td><td>Rotina automática</td><td>Médio</td></tr>
+<tr><td>Base de conhecimento</td><td>Reduzir reincidência</td><td>Service Delivery</td><td>45 dias</td><td>Erros conhecidos e runbooks</td><td>Baixo</td></tr>
+<tr><td>Revisão trimestral de SoD/acessos</td><td>Conformidade ITGC</td><td>Governança</td><td>Trimestral</td><td>Matriz SoD e auditoria</td><td>Baixo</td></tr></table></div></section>
+</main>
+<footer>Alessandra de S. Ferreira | coordenacao.itbp@gmail.com | linkedin.com/in/alessandra-sousa-ferreira<br>Materiais ilustrativos, elaborados sem dados de clientes ou empregadores.</footer>
+</body></html>

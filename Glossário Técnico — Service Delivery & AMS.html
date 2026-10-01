@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Glossário Técnico — Service Delivery & AMS | Alessandra de S. Ferreira</title>
+<meta name="description" content="Frameworks de AMS, estrutura do Ishikawa, gestão de mudanças, gestão financeira de contrato de serviço — referência técnica de Service Delivery.">
+<style>
+:root{--tim:#1f5fbf;--dia:#c62828;--ser:#d81b73;--ink:#1c2430;--mut:#5b6675;--bg:#f6f8fb;--card:#fff;--ln:#e2e7ee}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+header{background:#1f3a5f;color:#fff;padding:32px 20px;text-align:center}
+header h1{margin:0 0 6px;font-size:1.6rem}header p{margin:4px auto;max-width:760px;font-size:.95rem;opacity:.92}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:14px;background:#fff;border-bottom:1px solid var(--ln);position:sticky;top:0}
+nav a{font-size:.8rem;text-decoration:none;color:#1f3a5f;border:1px solid var(--ln);padding:4px 10px;border-radius:14px}
+main{max-width:980px;margin:0 auto;padding:16px}
+section{background:var(--card);border:1px solid var(--ln);border-left:6px solid var(--c);border-radius:8px;padding:18px;margin:18px 0}
+section h2{margin:0 0 2px;color:var(--c);font-size:1.15rem}.tag{font-size:.75rem;color:var(--mut);margin-bottom:10px}
+.w{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.85rem}
+th{background:var(--c);color:#fff;text-align:left;padding:7px}td{padding:7px;border-bottom:1px solid var(--ln);vertical-align:top}
+ol,ul{margin:6px 0;padding-left:22px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.st{flex:1 1 150px;border:1px solid var(--c);border-radius:8px;padding:8px;font-size:.82rem}.st b{color:var(--c)}
+.fish{display:flex;align-items:center;gap:0;margin:14px 0;overflow-x:auto}
+.fish-head{flex:0 0 auto;background:var(--c);color:#fff;border-radius:8px;padding:10px 14px;font-size:.82rem;font-weight:bold;white-space:nowrap}
+.fish-spine{flex:1 1 auto;height:3px;background:var(--c);min-width:30px}
+.fish-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.fish-cat{border:1px solid var(--c);border-radius:8px;padding:8px;font-size:.8rem}.fish-cat b{color:var(--c);display:block;margin-bottom:3px}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:20px}
+@media(prefers-color-scheme:dark){:root{--ink:#e8edf3;--mut:#9aa6b6;--bg:#12171e;--card:#1a212b;--ln:#2b3644}nav{background:#1a212b}nav a{color:#cfe0ff}}
+</style></head><body>
+<header><h1>Glossário Técnico — Service Delivery &amp; AMS</h1>
+<p>Frameworks, ferramentas de causa raiz e gestão financeira de contrato aplicados à sustentação de ambientes críticos (SAP e multiplataforma).</p>
+<p><small>Alessandra de S. Ferreira | Service Delivery, AMS e Governança de TI | Conteúdo de referência técnica, elaborado como material de estudo e consulta.</small></p></header>
+<nav><a href="#frameworks">Frameworks de AMS</a><a href="#estrutura">Estrutura de AMS</a><a href="#ishikawa">Ishikawa</a><a href="#change">Gestão de mudanças</a><a href="#financeiro">Gestão financeira</a></nav>
+<main>
+
+<section id="frameworks" style="--c:var(--tim)"><h2>1. Frameworks aplicados em projetos de AMS</h2><div class="tag">Referência para falar sobre metodologia e governança (azul TIM)</div>
+<div class="w"><table><tr><th>Framework</th><th>Para que serve</th><th>Onde entra no AMS</th></tr>
+<tr><td><b>ITIL</b></td><td>Boas práticas de gestão de serviços de TI</td><td>Base do fluxo de Incident, Problem, Change e Service Level Management</td></tr>
+<tr><td><b>COBIT</b></td><td>Governança e controle de TI, alinhamento com objetivos de negócio</td><td>Estruturação de comitês, papéis e responsabilidades, auditoria de processo</td></tr>
+<tr><td><b>ISO/IEC 20000</b></td><td>Norma internacional de gestão de serviços de TI</td><td>Certificação formal do processo de sustentação (quando o contrato exige)</td></tr>
+<tr><td><b>Six Sigma / Lean</b></td><td>Redução de variação e desperdício em processos</td><td>Análise de causa raiz e melhoria contínua (RCA, 5W2H, Ishikawa)</td></tr>
+<tr><td><b>Scrum / Ágil</b></td><td>Entrega iterativa de valor</td><td>Gestão de backlog de melhorias e pequenos desenvolvimentos</td></tr></table></div>
+<p><b>Resposta-modelo:</b> "Minha base de governança é o ITIL para o fluxo de incidente, problema, mudança e nível de serviço. Já apliquei COBIT na reestruturação de governança que fiz na TIM, e uso Six Sigma e 5W2H para melhoria contínua."</p></section>
+
+<section id="estrutura" style="--c:var(--ser)"><h2>2. Como um contrato de AMS é estruturado</h2><div class="tag">Composição de uma prática de sustentação (rosa Serasa)</div>
+<div class="flow"><div class="st"><b>Camadas de atendimento</b><br>N1 (primeiro atendimento), N2 (sustentação funcional), N3 (especialista/desenvolvimento)</div>
+<div class="st"><b>Matriz de severidade</b><br>P1 a P4, com tempo de resposta e resolução por nível de criticidade</div>
+<div class="st"><b>Processos ITIL</b><br>Gestão de incidente, problema, mudança e nível de serviço</div>
+<div class="st"><b>Governança</b><br>SLA, KPIs, scorecard de fornecedor, comitê de acompanhamento periódico</div></div>
+<p><b>Resposta-modelo:</b> "Um contrato de AMS é composto por uma matriz de severidade com tempo de resposta e resolução por nível, uma estrutura de atendimento em camadas — N1, N2 e N3 —, os processos de incidente, problema e mudança do ITIL, e uma governança com SLA, KPIs e comitê periódico com o cliente."</p></section>
+
+<section id="ishikawa" style="--c:var(--dia)"><h2>3. Diagrama de Ishikawa (espinha de peixe) — as duas partes</h2><div class="tag">Ferramenta de causa raiz (vermelho Dia)</div>
+<div class="fish">
+<div class="fish-cats" style="flex:1"><div class="fish-cat"><b>Método</b>Processo ou procedimento usado</div><div class="fish-cat"><b>Mão de obra</b>Pessoas envolvidas, treinamento</div><div class="fish-cat"><b>Máquina</b>Sistema, ferramenta, equipamento</div><div class="fish-cat"><b>Material</b>Dado de entrada, cadastro, insumo</div><div class="fish-cat"><b>Medida</b>Indicador usado para avaliar</div><div class="fish-cat"><b>Meio ambiente</b>Contexto externo, integração, fornecedor</div></div>
+<div class="fish-spine"></div>
+<div class="fish-head">EFEITO<br><small style="font-weight:normal">(o problema)</small></div>
+</div>
+<p><b>Parte 1 — Cabeça do peixe (o efeito):</b> o problema que está sendo analisado, escrito no ponto de partida do diagrama.</p>
+<p><b>Parte 2 — Espinha (as causas):</b> as causas possíveis, organizadas por categoria (os "6M" acima), ramificando da espinha central.</p>
+<p><b>Resposta-modelo:</b> "A espinha de peixe tem duas partes: a cabeça, onde fica o efeito — o problema que estou analisando — e a espinha, onde organizo as causas por categoria, como método, mão de obra, máquina e material."</p>
+<p><b>Quando uso Ishikawa x RCA direto:</b> para o dia a dia, o RCA em planilha já resolve a maioria dos casos. O Ishikawa entra quando o problema tem múltiplas causas possíveis e o time precisa visualizar isso junto — ou quando o público (ex.: matriz internacional) pede algo mais visual para entender rápido.</p></section>
+
+<section id="change" style="--c:var(--tim)"><h2>4. Gestão de mudanças (Change Management)</h2><div class="tag">Processo ITIL de controle de risco (azul TIM)</div>
+<p>É o processo que garante que toda alteração no ambiente — correção, atualização, nova funcionalidade — passe por avaliação de risco e aprovação <b>antes</b> de ir para produção, evitando que uma correção mal feita gere um novo incidente.</p>
+<div class="flow"><div class="st"><b>1. Requisição (RFC)</b><br>Descrição, justificativa, sistemas afetados, risco</div>
+<div class="st"><b>2. Avaliação</b><br>Plano de testes, plano de rollback, janela de execução</div>
+<div class="st"><b>3. Aprovação (CAB)</b><br>Comitê avalia e aprova conforme o risco</div>
+<div class="st"><b>4. Execução e validação</b><br>Implantação, validação com usuário-chave, encerramento</div></div>
+<p><b>Resposta-modelo:</b> "Toda correção definitiva passa por um processo de gestão de mudanças — avaliação de risco, plano de rollback e aprovação — antes de ir para produção. Foi esse processo que sustentou minha redução de incidentes críticos."</p></section>
+
+<section id="financeiro" style="--c:var(--ser)"><h2>5. Gestão financeira de contrato de serviço</h2><div class="tag">CAPEX, OPEX e lucro bruto (rosa Serasa)</div>
+<div class="w"><table><tr><th>Termo</th><th>O que significa</th></tr>
+<tr><td><b>CAPEX</b></td><td>Capital Expenditure — investimento em ativos (ex.: nova infraestrutura, licenças)</td></tr>
+<tr><td><b>OPEX</b></td><td>Operational Expenditure — custo operacional recorrente (ex.: mão de obra, consultoria, manutenção)</td></tr>
+<tr><td><b>Gross Profit (Lucro Bruto)</b></td><td>Receita menos custo direto do serviço prestado (mão de obra, consultoria terceira, infraestrutura direta)</td></tr>
+<tr><td><b>Gross Margin (Margem Bruta)</b></td><td>Lucro bruto dividido pela receita, em percentual</td></tr></table></div>
+<p><b>Resposta-modelo:</b> "Acompanhava contratos de fornecedor, SLA e custo de consultoria terceira, entregando a informação até o lucro bruto — receita menos o custo direto do serviço — sem entrar em despesas administrativas da empresa."</p></section>
+
+</main>
+<footer>Alessandra de S. Ferreira | coordenacao.itbp@gmail.com | linkedin.com/in/alessandra-sousa-ferreira<br>Material de referência técnica para estudo e consulta.</footer>
+</body></html>

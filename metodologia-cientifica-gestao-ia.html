@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metodologia científica aplicada à gestão de projetos e IA | Alessandra Ferreira</title>
+<meta name="description" content="Resumo autoral da disciplina de Metodologia Científica da pós-graduação em IA, conectado à prática de gestão de projetos e governança.">
+<style>
+:root{--bg:#fff8fb;--ink:#2b0b26;--soft:#6b4a63;--accent:#c2255c;--card:#ffffff;--line:#f0d3e0;--tag:#fce8f1}
+@media (prefers-color-scheme:dark){:root{--bg:#1d0a19;--ink:#fbe9f2;--soft:#d1aec3;--accent:#ff7aa8;--card:#2a1225;--line:#4a2642;--tag:#3a1a33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:32px 20px 64px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+nav{font-size:15px}
+h1{font:700 clamp(30px,6vw,48px)/1.15 Georgia,"Times New Roman",serif;margin:28px 0 12px}
+h2{font:700 27px/1.25 Georgia,"Times New Roman",serif;margin:48px 0 10px}
+p{margin:0 0 14px;max-width:70ch}
+.lead{font-size:19px;color:var(--soft)}
+.note{background:var(--tag);border-left:4px solid var(--accent);padding:12px 16px;border-radius:0 8px 8px 0;font-size:15px;color:var(--soft);margin:18px 0}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;font-size:16px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;background:var(--card)}
+th,td{text-align:left;padding:10px 14px;border:1px solid var(--line);vertical-align:top;font-size:16px}
+th{background:var(--tag)}
+ul.check{list-style:none;padding:0;margin:12px 0}
+ul.check li{padding:10px 14px 10px 44px;position:relative;border-bottom:1px solid var(--line)}
+ul.check li::before{content:"";position:absolute;left:14px;top:16px;width:16px;height:16px;border:2px solid var(--accent);border-radius:4px}
+.btn{display:inline-block;margin:6px 10px 6px 0;padding:10px 18px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+.btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+footer{margin-top:56px;font-size:14px;color:var(--soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a href="index.html">Voltar ao portfólio</a></nav>
+
+<h1>Metodologia científica aplicada à gestão de projetos e IA</h1>
+<p class="lead">Resumo autoral da última disciplina da minha pós-graduação em Inteligência Artificial, conectado ao que faço na prática: governança, service delivery e gestão de projetos.</p>
+<div class="note">Material de estudo e consulta. A seção "Conexão com a prática" é a minha interpretação, e os exemplos são ilustrativos, sem dados reais de empresas.</div>
+
+<h2>Por que isso importa fora da academia</h2>
+<p>Pesquisa científica é um processo sistemático e rigoroso para produzir ou revisar conhecimento. Em gestão e em IA, o raciocínio é o mesmo: partir de um problema bem definido, coletar dados confiáveis, testar hipóteses e validar se a solução funciona antes de escalar.</p>
+<div class="grid">
+<div class="card"><h3>Identificar o problema</h3><p>Delimitar com clareza o que será investigado.</p></div>
+<div class="card"><h3>Coletar e analisar dados</h3><p>Dados relevantes e de qualidade sustentam a decisão.</p></div>
+<div class="card"><h3>Testar hipóteses</h3><p>Comparar soluções possíveis em vez de escolher por intuição.</p></div>
+<div class="card"><h3>Validar resultados</h3><p>Métodos rigorosos mostram se a solução entregou o esperado.</p></div>
+</div>
+
+<h2>Conexão com a prática</h2>
+<p>Cada etapa da pesquisa tem um equivalente no ciclo de um projeto:</p>
+<div class="tw"><table>
+<thead><tr><th>Etapa da pesquisa</th><th>Equivalente em projetos</th></tr></thead>
+<tbody>
+<tr><td>Tema e problema de pesquisa</td><td>Iniciação, business case e definição do problema</td></tr>
+<tr><td>Revisão da literatura</td><td>Benchmarking e lições aprendidas de projetos anteriores</td></tr>
+<tr><td>Objetivos e hipóteses</td><td>Escopo, metas e OKRs</td></tr>
+<tr><td>Planejamento metodológico</td><td>Plano do projeto e escolha de indicadores</td></tr>
+<tr><td>Coleta e análise de dados</td><td>Monitoramento de KPIs e análise de causa raiz</td></tr>
+<tr><td>Resultados, limitações e conclusões</td><td>Status report e lições aprendidas</td></tr>
+</tbody></table></div>
+
+<h2>Como formular um bom problema de pesquisa</h2>
+<p>O problema de pesquisa é a pergunta central, e dele derivam objetivos, método, coleta de dados e conclusões. Quatro critérios ajudam a testá-lo:</p>
+<div class="grid">
+<div class="card"><h3>Clareza</h3><p>Enunciado preciso, sem ambiguidade.</p></div>
+<div class="card"><h3>Delimitação</h3><p>Recorte que não seja amplo demais nem superficial.</p></div>
+<div class="card"><h3>Importância</h3><p>Relevante e útil para a área de estudo.</p></div>
+<div class="card"><h3>Viabilidade</h3><p>Possível de investigar com os recursos disponíveis.</p></div>
+</div>
+<p>Exemplo ilustrativo de pergunta: por que as mesmas falhas voltam a acontecer depois de corrigidas?</p>
+
+<h2>Três tipos de hipótese</h2>
+<p>A hipótese é uma resposta provisória ao problema, e será confirmada ou refutada pelos dados.</p>
+<div class="grid">
+<div class="card"><h3>Descritiva</h3><p>Descreve uma característica de um fenômeno. Exemplo: a maior parte do backlog vem de poucas áreas.</p></div>
+<div class="card"><h3>Explanatória</h3><p>Liga causa e efeito entre variáveis. Exemplo: a falta de priorização por valor gera acúmulo de backlog.</p></div>
+<div class="card"><h3>Preditiva</h3><p>Antecipa o comportamento de uma variável a partir de outra. Exemplo: quanto maior a reincidência de um tipo de incidente, maior o tempo de resolução.</p></div>
+</div>
+<p>Nas hipóteses explanatórias aparecem as variáveis independentes (que influenciam) e dependentes (que sofrem a influência).</p>
+
+<h2>Abordagem qualitativa, quantitativa ou mista</h2>
+<div class="grid">
+<div class="card"><h3>Qualitativa</h3><p>Entrevistas, observação, análise documental e estudo de caso. Busca compreender significados e contextos.</p></div>
+<div class="card"><h3>Quantitativa</h3><p>Surveys, experimentos e estatística. Mede variáveis e testa hipóteses.</p></div>
+<div class="card"><h3>Mista</h3><p>Combina as duas, em sequência ou ao mesmo tempo, para uma visão mais completa.</p></div>
+</div>
+<p>A escolha depende do objetivo, da natureza do fenômeno, do tempo, dos recursos e do que o pesquisador sabe fazer bem. Também vale justificar a decisão por escrito.</p>
+
+<h2>Limitações e ética fazem parte do método</h2>
+<div class="grid">
+<div class="card"><h3>Amostragem</h3><p>Tamanho e representatividade limitam a generalização dos resultados.</p></div>
+<div class="card"><h3>Vieses</h3><p>Do participante (memória, desejabilidade social) e de quem interpreta os dados.</p></div>
+<div class="card"><h3>Causalidade</h3><p>Difícil de estabelecer em estudos observacionais ou transversais.</p></div>
+<div class="card"><h3>Ética</h3><p>Consentimento informado, sigilo e privacidade dos participantes.</p></div>
+</div>
+<p>Declarar as limitações evita conclusões exageradas e aponta o que investigar depois. Vale tanto para um artigo quanto para um dashboard de IA.</p>
+
+<h2>Checklist de rigor</h2>
+<ul class="check">
+<li>O problema é uma pergunta clara e delimitada?</li>
+<li>Os objetivos são mensuráveis e ligados ao problema?</li>
+<li>O método é coerente com a pergunta?</li>
+<li>Os dados são confiáveis e a fonte é conhecida?</li>
+<li>As conclusões respondem à pergunta inicial?</li>
+<li>As limitações do estudo estão declaradas?</li>
+<li>As fontes estão citadas corretamente?</li>
+</ul>
+
+<h2>Estrutura de um projeto de pesquisa</h2>
+<p>Para quem for escrever um: introdução, delimitação do tema, problema, hipóteses, objetivos (geral e específicos), justificativa, referencial teórico, metodologia, recursos, cronograma e referências. As normas da ABNT cobrem citações, formatação e referências.</p>
+
+<p style="margin-top:28px"><a class="btn" href="index.html">Voltar ao portfólio</a><a class="btn alt" href="https://www.linkedin.com/in/alessandra-sousa-ferreira" rel="noopener">LinkedIn</a></p>
+<footer>Alessandra de S. Ferreira. Conteúdo baseado na apostila de Metodologia Científica da pós-graduação em IA, reescrito com minhas palavras.</footer>
+</div>
+</body>
+</html>
